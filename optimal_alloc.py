@@ -5,20 +5,32 @@
 # next substitute
 
 import sys
+import urllib
+import httplib2
+import json
 
 ga = [0]*9
 teams = { 'CSK':0,'DD':1,'KKR':2,'KXIP':3,'MI':4,'PWI':5,'RCB':6,'RR':7,'SH':8 }
 teams_list = ['CSK','DD','KKR','KXIP','MI','PWI','RCB','RR','SH']
 s = []
 
-with open(sys.argv[1]) as f:
+def fetch_data(url):
+    http = httplib2.Http(disable_ssl_certificate_validation=True)
+    headers = { 'Cookie': 'session_id_ifl="966:4c650ae2-0b1b-4e77-ac1b-4c6222b0e136"' }
+    return json.loads(http.request(url, 'GET', headers=headers)[1])
+
+all_players = fetch_data('https://fantasy.iplt20.com/ifl/research/get_res_data_list.json?json')["players"]
+
+with open('allocation') as f:
     data = f.readlines()
     for i in range(len(data)):
-        t = data[i].strip()
+        player_id = data[i].strip()
+        t = [p for p in all_players if p["id"] == int(player_id)][0]["team_name"]
+        print t
         ga[teams[t]] = ga[teams[t]] + 1
 
 
-with open(sys.argv[2]) as f:
+with open('schedule') as f:
     data = f.readlines()
     for i in range(len(data)):
         mstr = data[i].split()
@@ -81,4 +93,4 @@ def potential(a, k):
 
     return max_potential, [teams_list[x] for x in sub_from], [teams_list[y] for y in sub_to]
 
-print potential(ga, 0)
+#print potential(ga, 0)
