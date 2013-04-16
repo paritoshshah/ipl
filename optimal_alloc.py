@@ -9,7 +9,8 @@ import urllib
 import httplib2
 import json
 
-ga = [0]*9
+ga = [[] for i in range(9)]
+fanta_team = []
 teams = { 'CSK':0,'DD':1,'KKR':2,'KXIP':3,'MI':4,'PWI':5,'RCB':6,'RR':7,'SH':8 }
 teams_list = ['CSK','DD','KKR','KXIP','MI','PWI','RCB','RR','SH']
 s = []
@@ -21,14 +22,30 @@ def fetch_data(url):
 
 all_players = fetch_data('https://fantasy.iplt20.com/ifl/research/get_res_data_list.json?json')["players"]
 
+def num_games_played(p):
+    return len(fetch_data('https://fantasy.iplt20.com/ifl/research/get_player_stats.json?player_id='+ p + '&json')["player_stats"])
+
+ref_player = [p for p in all_players if p["id"] == 1][0]
+ref_num_of_games = num_games_played("1")
+vfm_factor = ref_player["vfm"] * ref_player["price"] * ref_num_of_games / ref_player["fanta_points"]
+
+for i in range(len(all_players)):
+    p = all_players[i]
+    if p["vfm"] == None:
+        p["point_avg"] = 0
+    else:
+        p["point_avg"] = p["vfm"] * p["price"] / vfm_factor
+
 with open('allocation') as f:
     data = f.readlines()
     for i in range(len(data)):
-        player_id = data[i].strip()
-        t = [p for p in all_players if p["id"] == int(player_id)][0]["team_name"]
-        print t
-        ga[teams[t]] = ga[teams[t]] + 1
-
+        player_id = int(data[i].strip())
+        fanta_team.append(player_id)
+        player = [p for p in all_players if p["id"] == player_id][0]
+        t = player["team_name"]
+        ga[teams[t]].append(player)
+        
+    print ga
 
 with open('schedule') as f:
     data = f.readlines()
@@ -41,6 +58,29 @@ cache = {}
 
 def make_key(a, k):
     return "".join(str(x) for x in a) + str(k)
+
+def top_picks_for_team(t):
+    players = [p for p in all_players if p["team_name"] == teams_list[t]]
+    return top_players(players, 5)
+
+def top_indian_batsmen():
+    players = [p for p in all_players if p["country_id"] == 1 and p["skill_id"] == 4]
+    return top_players(players, 4)
+
+def top_players(players, n):
+    temp = sorted(players, key=lambda(x): -1 * x["point_avg"])[:n]
+    return map(lambda p: [p["firstname"], p["point_avg"]], temp)
+
+print "top_indian_batsmen"
+print top_indian_batsmen()
+
+print "top_players"
+print top_players(all_players, 11)
+
+for i in range(len(teams_list)):
+    print teams_list[i]
+    print top_picks_for_team(i)
+
 
 def potential(a, k):
 
