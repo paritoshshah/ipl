@@ -14,6 +14,7 @@ fanta_team = []
 teams = { 'CSK':0,'DD':1,'KKR':2,'KXIP':3,'MI':4,'PWI':5,'RCB':6,'RR':7,'SH':8 }
 teams_list = ['CSK','DD','KKR','KXIP','MI','PWI','RCB','RR','SH']
 s = []
+top_picks = [[] for i in range(9)]
 
 def fetch_data(url):
     http = httplib2.Http(disable_ssl_certificate_validation=True)
@@ -29,6 +30,8 @@ ref_player = [p for p in all_players if p["id"] == 1][0]
 ref_num_of_games = num_games_played("1")
 vfm_factor = ref_player["vfm"] * ref_player["price"] * ref_num_of_games / ref_player["fanta_points"]
 
+player_info = {}
+
 for i in range(len(all_players)):
     p = all_players[i]
     if p["vfm"] == None:
@@ -36,17 +39,18 @@ for i in range(len(all_players)):
     else:
         p["point_avg"] = p["vfm"] * p["price"] / vfm_factor
 
+    p["team_id"] = teams[p["team_name"]]
+    player_info[p["id"]] = p
+
 with open('allocation') as f:
     data = f.readlines()
     for i in range(len(data)):
-        player_id = int(data[i].strip())
-        fanta_team.append(player_id)
-        player = [p for p in all_players if p["id"] == player_id][0]
+        player_name = data[i].strip()
+        player = [p for p in all_players if p["firstname"] == player_name][0]
+        fanta_team.append(player["id"])
         t = player["team_name"]
         ga[teams[t]].append(player)
         
-    print ga
-
 with open('schedule') as f:
     data = f.readlines()
     for i in range(len(data)):
@@ -54,83 +58,105 @@ with open('schedule') as f:
         m = [teams[mstr[0]], teams[mstr[1]]]
         s.append(m)
 
+
+def top_players(players, n):
+    return sorted(players, key=lambda(x): -1 * x["point_avg"])[:n]
+
+def top_picks_for_team(t):
+    players = [p for p in all_players if p["team_name"] == teams_list[t] and p["id"] not in fanta_team]
+    return top_players(players, 5)
+
+for i in range(9):
+    top_picks[i] = top_picks_for_team(i)
+
+#print [ [p["firstname"], p["point_avg"]] for p in top_players([ p for p in all_players if p["country_id"] == 2 ], 15) ]
+
+#print [ [p["firstname"], p["point_avg"]] for p in top_players([ p for p in all_players if p["country_id"] == 1 and p["skill_id"] == 4 ], 15) ]
+
+#print "top_players"
+#print top_players(all_players, 11)
+
+def accum(players):
+    return reduce(lambda x,s: x + s["point_avg"], players, 0)
+
+def accum_ids(players):
+    return reduce(lambda x,s: x + player_info[s]["point_avg"], players, 0)
+
 cache = {}
 
 def make_key(a, k):
-    return "".join(str(x) for x in a) + str(k)
+    return ".".join(str(x) for x in a) + str(k)
 
-def top_picks_for_team(t):
-    players = [p for p in all_players if p["team_name"] == teams_list[t]]
-    return top_players(players, 5)
+def is_valid(t):
+    team = [[] for i in range(len(t))]
+    for i in range(len(t)):
+        team[i] = player_info[t[i]]
 
-def top_indian_batsmen():
-    players = [p for p in all_players if p["country_id"] == 1 and p["skill_id"] == 4]
-    return top_players(players, 4)
+    batsmen = len([p for p in team if p["skill_id"] == 4])
+    all_rounders = len([p for p in team if p["skill_id"] == 2])
+    keepers = len( [p for p in team if p["skill_id"] == 1])
+    bowlers = len([p for p in team if p["skill_id"] == 3])
+    overseas = len([p for p in team if p["country_id"] == 2])
 
-def top_players(players, n):
-    temp = sorted(players, key=lambda(x): -1 * x["point_avg"])[:n]
-    return map(lambda p: [p["firstname"], p["point_avg"]], temp)
+    return batsmen > 3 and batsmen < 6 and all_rounders > 0 and all_rounders < 5 and keepers == 1 and bowlers > 1 and bowlers < 6 and overseas < 5
 
-print "top_indian_batsmen"
-print top_indian_batsmen()
+def base_potential(t, s, k):
+    return accum_ids( [p for p in t if player_info[p]["team_id"] in [s[k][0], s[k][1]]] )
 
-print "top_players"
-print top_players(all_players, 11)
+def potential(t, k):
+    if (make_key(t, k) in cache):
+        return cache[make_key(t, k)]
 
-for i in range(len(teams_list)):
-    print teams_list[i]
-    print top_picks_for_team(i)
+    sub_out = "SKIP"
+    sub_in = "SKIP"
+    
+    if (k == len(s)):
+        return 0, sub_out, sub_in
+
+    max_potential = base_potential(t, s, k) + potential(t, k+1)[0]
+
+    hopefuls = top_picks[s[k][0]] 
+
+    for i in range(len(t)):
+        for j in range(len(hopefuls)):
+            t1 = list(t)
+            t1[i] = hopefuls[j]["id"]
+            if is_valid(t1):
+                p1 = base_potential(t1, s, k) + potential(sorted(t1), k+1)[0]
+
+                if p1 > max_potential:
+                    max_potential = p1
+                    sub_out = player_info[t[i]]["firstname"]
+                    sub_in = hopefuls[j]["firstname"]
+                
+                break
+
+    hopefuls = top_picks[s[k][1]] 
+    
+    for i in range(len(t)):
+        for j in range(len(hopefuls)):
+            t1 = list(t)
+            t1[i] = hopefuls[j]["id"]
+            if is_valid(t1):
+                p1 = base_potential(t1, s, k) + potential(sorted(t1), k+1)[0]
+
+                if p1 > max_potential:
+                    max_potential = p1
+                    sub_out = player_info[t[i]]["firstname"]
+                    sub_in = hopefuls[j]["firstname"]
+                
+                break
 
 
-def potential(a, k):
 
-    if (make_key(a, k) in cache):
-        return cache[make_key(a, k)]
+    cache[make_key(t, k)] = max_potential, sub_out, sub_in
 
-    if (k == len(s)-1):
-        return a[s[k][0]] + a[s[k][1]], -1, -1
+    return max_potential, sub_out, sub_in
 
-    max_potential = a[s[k][0]] + a[s[k][1]] + potential(a, k+1)[0]
-    sub_from = [s[k][0]]
-    sub_to = [s[k][0]]
+#print potential(sorted(fanta_team), 0)
+#print base_potential(sorted(fanta_team), s, 0)
+#print base_potential(sorted(fanta_team), s, 1)
+#for t in s[0]:
+#    print teams_list[t]
+#    print [ [p["firstname"], p["point_avg"]] for p in top_picks_for_team(t) ]
 
-    for i in range(len(a)):
-        if i != s[k][0] and i != s[k][1] and a[i] != 0:
-            a0 = list(a)
-            a0[s[k][0]] = a0[s[k][0]] + 1
-            a0[i] = a0[i] - 1
-            p0 = a0[s[k][0]] + a0[s[k][1]] + potential(a0, k+1)[0]
-
-            a1 = list(a)
-            a1[s[k][1]] = a1[s[k][1]] + 1
-            a1[i] = a1[i] - 1
-            p1 = a1[s[k][0]] + a1[s[k][1]] + potential(a1, k+1)[0]
-
-            if p0 > p1:
-                p = p0
-                to_idx = s[k][0]
-            else:
-                p = p1
-                to_idx = s[k][1]
-
-            if p == max_potential:
-                sub_from.append(i)
-                sub_to.append(to_idx)
-                if p0 == p1:
-                    sub_from.append(i)
-                    sub_to.append(s[k][0])
-
-            if p > max_potential:
-                max_potential = p
-                sub_from = [i]
-                sub_to = [to_idx]
-
-                if p0 == p1:
-                    sub_from.append(i)
-                    sub_to.append(s[k][0])
-
-    cache[make_key(a, k)] = max_potential, sub_from, sub_to
-
-    return max_potential, [teams_list[x] for x in sub_from], [teams_list[y] for y in sub_to]
-
-#print potential(ga, 0)
