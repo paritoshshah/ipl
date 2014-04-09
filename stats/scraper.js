@@ -55,20 +55,35 @@ function scrape_bowling_stats(page) {
 	});
 }
 
+function scrape_player_of_the_match(page) {
+	return page.evaluate(function() {
+		var player = "";
+		$('.notesRow').each(function() {
+			if($(this).text().indexOf("Player of the match") >= 0) {
+				player = $(this).text().trim().split('\n')[1].split('(')[0].trim();
+			}
+		});
+
+		return player;
+	});
+}
 
 //url = 'http://stats.espncricinfo.com/indian-premier-league-2013/engine/records/team/match_results.html?id=2013;trophy=117;type=season';
 //fetch(url, function(page) { console.log(scrape_list_of_matches(page)); phantom.exit(); });
 
+url = 'http://www.espncricinfo.com/indian-premier-league-2013/engine/match/597998.html';
+fetch(url, function(page) {
+	stats = scrape_batting_stats(page);
+	for(i=0; i<stats.length; i++) console.log(stats[i].join(',')); 
+	phantom.exit(); 
+});
+
 //url = 'http://www.espncricinfo.com/indian-premier-league-2013/engine/match/597998.html';
 //fetch(url, function(page) {
-//	stats = scrape_batting_stats(page);
+//	stats = scrape_bowling_stats(page);
 //	for(i=0; i<stats.length; i++) console.log(stats[i]); 
 //	phantom.exit(); 
 //});
 
-url = 'http://www.espncricinfo.com/indian-premier-league-2013/engine/match/597998.html';
-fetch(url, function(page) {
-	stats = scrape_bowling_stats(page);
-	for(i=0; i<stats.length; i++) console.log(stats[i]); 
-	phantom.exit(); 
-});
+//fetch(url, function(page) { console.log(scrape_player_of_the_match(page)); phantom.exit(); });
+
