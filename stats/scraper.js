@@ -110,11 +110,48 @@ function process_match_stats(url, callback) {
 	});
 }
 
+function scrape_dots(page) {
+	return page.evaluate(function() {
+		dots_counter = {};
+
+		$("p.commsText").each(function() {
+			if ($(this).text().indexOf("no run") >= 0) {
+				bowler = $(this).text().split('\n')[0].replace(/\ to.*/g, '');
+				if (dots_counter[bowler] === undefined) dots_counter[bowler] = 0;
+				dots_counter[bowler]++;
+			}
+		});
+
+		return dots_counter;
+	});
+}
+
+function process_innings_commentary_stats(url, innings, callback) {
+	fetch(url + "?innings=" + innings + ";view=commentary", function(p) {
+		match_id = url.split('/').pop().replace(/\..*/g, '');
+		stats = scrape_dots(p);
+		for ( b in stats ) {
+			fs.write('raw/dots/' + match_id + '.csv', match_id + ',' + b + ',' + stats[b] + '\n', 'a');
+		}
+
+		p.close();
+		callback.apply();
+	});
+}
+
 var matches = [];
 var match_idx = 0;
+var innings = 1;
 function process() {
 	if ( match_idx < matches.length ) {
-		process_match_stats(matches[match_idx++], process);
+		process_innings_commentary_stats(matches[match_idx], innings, process);
+		if (innings == 2) {
+			innings = 1;
+			match_idx++;
+		}
+		else {
+			innings = 2;
+		}
 	}
 	else {
 		phantom.exit();
@@ -135,3 +172,12 @@ fetch(url, function(page) {
 //});
 
 //fetch(url, function(page) { console.log(scrape_player_of_the_match(page)); phantom.exit(); });
+//url = 'http://www.espncricinfo.com/indian-premier-league-2013/engine/match/598066.html?innings=1;view=commentary';
+//fetch(url, function(page) { 
+//	stats = scrape_dots(page);
+//	for ( b in stats ) {
+//		console.log(b + ',' + stats[b]);
+//	}
+//	phantom.exit(); 
+//});
+
