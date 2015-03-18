@@ -25,19 +25,20 @@ def best_team(i, B, k, o):
     if k <= 0:
         return [0]
 
-    if (B <= 0 or i <= 0 or o < 0) and k > 0:
+    if (B <= 0 or i < 0 or o < 0) and k > 0:
         return [-1000]
 
     if players[i][1] > B:
         result = best_team(i-1, B, k, o)
-    elif players[i][3] == 2 and o ==0:
+    elif players[i][3] == 2 and o == 0:
         result = best_team(i-1, B, k, o)
     else:
         i_not_in_best = best_team(i-1, B, k, o)
         if players[i][3] == 2:
-            o -= 1
+            i_in_best = list(best_team(i-1, B-players[i][1], k-1, o-1))
+        else:
+            i_in_best = list(best_team(i-1, B-players[i][1], k-1, o))
 
-        i_in_best = list(best_team(i-1, B-players[i][1], k-1, o))
         i_in_best[0] += players[i][2]
         i_in_best += [i]
         
@@ -50,5 +51,6 @@ def best_team(i, B, k, o):
     return result
 
 team = best_team(len(players)-1, 200, 11, 4)
+print team
 for i in range(1, len(team)):
     print players[team[i]]
