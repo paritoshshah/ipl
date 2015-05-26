@@ -7,7 +7,7 @@ import csv
 best_team_cache = {}
 players = []
 
-with open('2015_prices_2014_point_averages.csv', 'rb') as csvfile:
+with open('2015_playoff_odds.csv', 'rb') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     for row in csvreader:
         players += [row]
