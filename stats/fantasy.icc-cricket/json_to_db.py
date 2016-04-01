@@ -13,7 +13,7 @@ def persist_player_stats(stats):
     c.close()
 
 
-for i in range(13, 33):
+for i in range(33, 35):
     all_players = json.load(open('raw/2016/' + str(i) + '.json'))
     for p in all_players:
         if p["matchCount"] == 1:

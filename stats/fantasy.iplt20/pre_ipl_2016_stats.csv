@@ -1,0 +1,189 @@
+firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,avg_points_2014,num_games_2015,avg_points_2015,num_games_2016wc,avg_points_2016wc
+"JP Duminy",0,DD,"JP Duminy",,,14,67,13,76,2,87
+"Mayank Agarwal",0,DD,"Mayank Agarwal",5,20,8,23,10,39,,
+"Khaleel Ahmed",0,DD,,,,,,,,,
+"Sam Billings",0,DD,,,,,,,,,
+"Carlos Brathwaite",0,DD,"Carlos Brathwaite",,,,,,,5,23
+"Nathan Coulter-Nile",0,DD,"Nathan Coulter-Nile",1,61,2,42,11,70,4,21
+"Quinton de Kock",0,DD,"Quinton de Kock","",0,7,34,2,47,4,77
+"Akhil Herwadkar",0,DD,,,,,,,,,
+"Imran Tahir",0,DD,"Imran Tahir",,,6,53,10,54,4,66
+"Shreyas Iyer",0,DD,"Shreyas Iyer",,,,,13,56,,
+"Zaheer Khan",0,DD,"Zaheer Khan",2,78,6,49,6,68,,
+"Mahipal Lomror",0,DD,,,,,,,,,
+"Chama Milind",0,DD,"Chama Milind",,,0,,0,,,
+"Amit Mishra",0,DD,"Amit Mishra",17,72,10,29,12,36,,
+"Mohammed Shami",0,DD,"Mohammed Shami",3,16,12,29,0,,,
+"Christopher Morris",0,DD,"Christopher Morris",16,36,,,11,69,3,81
+"Shahbaz Nadeem",0,DD,"Shahbaz Nadeem",12,48,11,30,3,39,,
+"Karun Nair",0,DD,"Karun Nair",2,4,11,56,13,24,,
+"Pawan Negi",0,DD,"Pawan Negi",1,19,2,8,10,53,,
+"Rishabh Pant",0,DD,,,,,,,,,
+"Joel Paris",0,DD,,,,,,,,,
+"Pratyush Singh",0,DD,"Pratyush Singh",,,,,0,,,
+"Sanju Samson",0,DD,"Sanju Samson",10,34,13,53,13,35,,
+"Pawan Suyal",0,DD,"Pawan Suyal",1,40,1,25,3,6,,
+"Jayant Yadav",0,DD,"Jayant Yadav",16,40,0,,2,63,,
+"Suresh Raina",1,GL,"Suresh Raina",17,62,16,76,17,51,5,42
+"Akshdeep Nath",1,GL,,,,,,,,,
+"Dwayne Bravo",1,GL,"Dwayne Bravo",18,68,1,15,17,81,5,74
+"Aaron Finch",1,GL,"Aaron Finch",14,58,13,43,3,4,2,41
+"Ishan Kishan",1,GL,,,,,,,,,
+"Ravindra Jadeja",1,GL,"Ravindra Jadeja",18,51,16,68,17,51,5,43
+"Shadab Jakati",1,GL,"Shadab Jakati",,,1,-4,,,,
+"Dinesh Karthik",1,GL,"Dinesh Karthik",19,45,14,45,14,31,,
+"Shivil Kaushik",1,GL,,,,,,,,,
+"Dhawal Kulkarni",1,GL,"Dhawal Kulkarni",6,49,8,49,10,56,,
+"Praveen Kumar",1,GL,"Praveen Kumar",15,55,3,64,12,25,,
+"Brendon McCullum",1,GL,"Brendon McCullum",1,7,14,53,14,61,,
+"Pradeep Sangwan",1,GL,,,,,,,,,
+"Jaydev Shah",1,GL,,,,,,,,,
+"Umang Sharma",1,GL,,,,,,,,,
+"Dwayne Smith",1,GL,"Dwayne Smith",13,60,16,76,16,47,,
+"Dale Steyn",1,GL,"Dale Steyn",17,73,14,52,6,28,2,17
+"Pravin Tambe",1,GL,"Pravin Tambe",3,21,13,57,9,39,,
+"Andrew Tye",1,GL,"Andrew Tye",,,,,0,,,
+"David Miller",2,KXIP,"David Miller",12,72,16,59,13,50,4,31
+"Kyle Abbott",2,KXIP,"Kyle Abbott",,,,,0,,3,95
+"Anureet Singh",2,KXIP,"Anureet Singh",,,0,,14,42,,
+"Armaan Jaffer",2,KXIP,,,,,,,,,
+"Farhaan Behardien",2,KXIP,"Farhaan Behardien",,,,,,,1,105
+"K.C. Cariappa",2,KXIP,"K.C. Cariappa",,,,,1,13,,
+"Rishi Dhawan",2,KXIP,"Rishi Dhawan",5,34,13,54,5,22,,
+"Gurkeerat Mann Singh",2,KXIP,"Gurkeerat Mann Singh",9,18,0,,5,33,,
+"Mitchell Johnson",2,KXIP,"Mitchell Johnson",17,66,14,60,9,39,,
+"Shaun Marsh",2,KXIP,"Shaun Marsh",8,59,2,82,4,40,,
+"Glenn Maxwell",2,KXIP,"Glenn Maxwell",3,22,16,80,11,27,4,71
+"Nikhil Naik",2,KXIP,,,,,,,,,
+"Akshar Patel",2,KXIP,"Akshar Patel",13,38,17,71,14,62,,
+"Wriddhiman Saha",2,KXIP,"Wriddhiman Saha",3,39,17,50,14,37,,
+"Pardeep Sahu",2,KXIP,"Pardeep Sahu",,,,,0,,,
+"Sandeep Sharma",2,KXIP,"Sandeep Sharma","",0,11,72,14,55,,
+"Mohit Sharma",2,KXIP,"Mohit Sharma","",0,16,57,16,41,,
+"Marcus Stoinis",2,KXIP,"Marcus Stoinis",,,,,0,,,
+"Swapnil Singh",2,KXIP,,,,,,,,,
+"Shardul Thakur",2,KXIP,"Shardul Thakur",,,0,,1,23,,
+"Murali Vijay",2,KXIP,"Murali Vijay",15,31,11,34,11,37,,
+"Manan Vohra",2,KXIP,"Manan Vohra",10,27,8,79,7,18,,
+"Gautam Gambhir",3,KKR,"Gautam Gambhir",16,42,16,37,13,41,,
+"Piyush Chawla",3,KKR,"Piyush Chawla",16,42,11,61,13,45,,
+"John Hastings",3,KKR,"John Hastings",,,1,27,,,1,13
+"Brad Hogg",3,KKR,"Brad Hogg",1,4,,,6,66,,
+"Jason Holder",3,KKR,"Jason Holder",6,22,1,60,,,,
+"Sheldon Jackson",3,KKR,"Sheldon Jackson",,,,,0,,,
+"Kuldeep Yadav",3,KKR,"Kuldeep Yadav",,,0,,0,,,
+"Chris Lynn",3,KKR,"Chris Lynn",,,2,66,0,,,
+"Manan Sharma",3,KKR,,,,,,,,,
+"Morne Morkel",3,KKR,"Morne Morkel",10,41,12,59,7,71,,
+"Colin Munro",3,KKR,"Colin Munro",,,,,0,,5,40
+"Sunil Narine",3,KKR,"Sunil Narine",16,77,16,69,8,49,,
+"Manish Pandey",3,KKR,"Manish Pandey",7,31,16,46,13,32,1,0
+"Yusuf Pathan",3,KKR,"Yusuf Pathan",16,40,15,40,13,49,,
+"Ankit Rajpoot",3,KKR,,,,,,,,,
+"Andre Russell",3,KKR,"Andre Russell",3,6,2,7,13,101,5,101
+"Rajagopal Sathish",3,KKR,,,,,,,,,
+"Shakib Al Hasan",3,KKR,"Shakib Al Hasan",,,13,81,4,51,4,81
+"Jaidev Unadkat",3,KKR,"Jaidev Unadkat",13,45,9,37,1,4,,
+"Robin Uthappa",3,KKR,"Robin Uthappa",16,42,16,85,13,60,,
+"Suryakumar Yadav",3,KKR,"Suryakumar Yadav",,,16,24,13,25,,
+"Umesh Yadav",3,KKR,"Umesh Yadav",,,12,48,12,45,,
+"Rohit Sharma",4,MI,"Rohit Sharma",19,51,15,51,16,58,5,29
+"Corey Anderson",4,MI,"Corey Anderson",,,12,55,4,58,5,48
+"Jasprit Bumrah",4,MI,"Jasprit Bumrah",2,45,11,35,4,10,5,32
+"Jos Buttler",4,MI,"Jos Buttler",,,,,,,5,67
+"Unmukt Chand",4,MI,"Unmukt Chand",9,25,1,-5,6,32,,
+"Marchant de Lange",4,MI,"Marchant de Lange",,,1,70,1,52,,
+"Shreyas Gopal",4,MI,"Shreyas Gopal",,,4,61,1,20,,
+"Harbhajan Singh",4,MI,"Harbhajan Singh",19,68,14,62,15,70,,
+"Kishore Kamath",4,MI,,,,,,,,,
+"Siddhesh Lad",4,MI,,,,,,,,,
+"Mitchell McClenaghan",4,MI,"Mitchell McClenaghan",,,,,12,65,4,56
+"Lasith Malinga",4,MI,"Lasith Malinga",17,50,10,70,15,73,,
+"Hardik Pandya",4,MI,"Hardik Pandya",,,,,9,43,5,47
+"Krunal Pandya",4,MI,,,,,,,,,
+"Parthiv Patel",4,MI,"Parthiv Patel",,,12,41,14,51,,
+"Kieron Pollard",4,MI,"Kieron Pollard",18,62,15,39,16,64,,
+"Deepak Punia",4,MI,,,,,,,,,
+"Nitish Rana",4,MI,"Nitish Rana",,,,,0,,,
+"Jitesh Sharma",4,MI,,,,,,,,,
+"Ambati Rayudu",4,MI,"Ambati Rayudu",17,23,15,45,15,42,,
+"Lendl Simmons",4,MI,"Lendl Simmons",,,8,91,13,75,1,179
+"Tim Southee",4,MI,"Tim Southee",,,3,31,6,42,,
+"Jagadeesha Suchith",4,MI,,,,,,,,,
+"Vinay Kumar",4,MI,"Vinay Kumar",16,57,9,33,13,34,,
+"Akshay Wakhare",4,MI,"Akshay Wakhare",,,,,0,,,
+"MS Dhoni",5,RPS,"MS Dhoni",16,57,16,47,17,48,5,44
+"Ankit Sharma",5,RPS,"Ankit Sharma",1,7,3,76,4,35,,
+"Baba Aparajith",5,RPS,"Baba Aparajith",,,0,,0,,,
+"Ravichandran Ashwin",5,RPS,"Ravichandran Ashwin",18,44,16,55,14,54,5,46
+"Murugan Ashwin",5,RPS,,,,,,,,,
+"Ankush Bains",5,RPS,"Ankush Bains",,,0,,0,,,
+"Rajat Bhatia",5,RPS,"Rajat Bhatia",15,38,12,56,2,5,,
+"Scott Boland",5,RPS,,,,,,,,,
+"Deepak Chahar",5,RPS,,,,,,,,,
+"Ashok Dinda",5,RPS,"Ashok Dinda",13,40,9,25,1,12,,
+"Francois du Plessis",5,RPS,"Francois du Plessis",,,15,42,17,41,4,42
+"Peter Handscomb",5,RPS,,,,,,,,,
+"Jaskaran Singh",5,RPS,,,,,,,,,
+"Mitchell Marsh",5,RPS,"Mitchell Marsh",,,,,,,2,43
+"Albie Morkel",5,RPS,"Albie Morkel",8,51,7,36,4,61,,
+"Ishwar Pandey",5,RPS,"Ishwar Pandey",2,5,13,38,10,54,,
+"Irfan Pathan",5,RPS,"Irfan Pathan",15,49,10,27,0,,,
+"Thisara Perera",5,RPS,"Thisara Perera",16,72,0,,2,21,4,63
+"Kevin Pietersen",5,RPS,"Kevin Pietersen",,,11,41,0,,,
+"Ajinkya Rahane",5,RPS,"Ajinkya Rahane",18,43,13,47,13,75,1,52
+"Ishant Sharma",5,RPS,"Ishant Sharma",16,31,3,33,4,9,,
+"RP Singh",5,RPS,,,,,,,,,
+"Steve Smith",5,RPS,"Steve Smith",7,39,10,34,13,44,4,32
+"Saurabh Tiwary",5,RPS,"Saurabh Tiwary",6,26,0,,6,35,,
+"Adam Zampa",5,RPS,"Adam Zampa",,,,,,,4,66
+"Virat Kohli",6,RCB,"Virat Kohli",16,73,14,45,14,70,5,105
+"Varun Aaron",6,RCB,"Varun Aaron",,,10,64,5,35,,
+"Abu Nechim",6,RCB,"Abu Nechim",,,4,34,3,21,,
+"Sreenath Arvind",6,RCB,"Sreenath Arvind",,,,,5,69,,
+"Samuel Badree",6,RCB,"Samuel Badree",1,11,4,38,0,,5,69
+"Stuart Binny",6,RCB,"Stuart Binny",17,47,13,25,12,29,,
+"Yuzvendra Chahal",6,RCB,"Yuzvendra Chahal",1,12,14,51,13,57,,
+"AB de Villiers",6,RCB,"AB de Villiers",14,49,14,59,14,72,4,54
+"Praveen Dubey",6,RCB,,,,,,,,,
+"Chris Gayle",6,RCB,"Chris Gayle",16,93,9,33,12,77,4,88
+"Travis Head",6,RCB,"Travis Head",,,,,0,,,
+"Iqbal Abdulla",6,RCB,"Iqbal Abdulla",5,52,1,19,5,48,,
+"Kedar Jadhav",6,RCB,"Kedar Jadhav",10,24,10,28,13,32,,
+"Akshay Karnewar",6,RCB,,,,,,,,,
+"Sarfaraz Naushad Khan",6,RCB,"Sarfaraz Naushad Khan",,,,,11,13,,
+"Vikramjeet Malik",6,RCB,"Vikramjeet Malik",3,46,1,35,0,,,
+"Mandeep Singh",6,RCB,"Mandeep Singh",14,28,3,12,12,29,,
+"Adam Milne",6,RCB,"Adam Milne",,,,,0,,4,41
+"Harshal Patel",6,RCB,"Harshal Patel",,,3,46,13,51,,
+"Lokesh Rahul",6,RCB,"Lokesh Rahul",2,15,11,24,9,26,,
+"Parveez Rasool",6,RCB,"Parveez Rasool",2,33,3,21,2,34,,
+"Kane Richardson",6,RCB,"Kane Richardson",3,42,7,58,0,,,
+"Sachin Baby",6,RCB,,,,,,,,,
+"Mitchell Starc",6,RCB,"Mitchell Starc",,,14,62,11,86,,
+"Vikas Tokas",6,RCB,,,,,,,,,
+"Shane Watson",6,RCB,"Shane Watson",16,96,13,57,9,95,4,91
+"David Wiese",6,RCB,"David Wiese",,,,,12,66,3,38
+"Shikhar Dhawan",7,SRH,"Shikhar Dhawan",10,50,14,44,14,44,4,27
+"Ashish Reddy",7,SRH,"Ashish Reddy",10,27,0,,6,38,,
+"Ricky Bhui",7,SRH,"Ricky Bhui",,,0,,0,,,
+"Bipul Sharma",7,SRH,"Bipul Sharma",1,60,,,4,34,,
+"Trent Boult",7,SRH,"Trent Boult",,,,,7,62,,
+"Ben Cutting",7,SRH,"Ben Cutting",,,1,81,0,,,
+"Moises Henriques",7,SRH,"Moises Henriques",10,51,4,33,9,108,,
+"Deepak Hooda",7,SRH,"Deepak Hooda",,,0,,13,30,,
+"Siddarth Kaul",7,SRH,"Siddarth Kaul",6,38,5,12,0,,,
+"Bhuvneshwar Kumar",7,SRH,"Bhuvneshwar Kumar",16,53,14,73,14,61,,
+"Abhimanyu Mithun",7,SRH,"Abhimanyu Mithun",1,29,,,0,,,
+"Eoin Morgan",7,SRH,"Eoin Morgan",13,39,,,9,42,5,33
+"Mustafizur Rahman",7,SRH,"Mustafizur Rahman",,,,,,,3,116
+"Ashish Nehra",7,SRH,"Ashish Nehra",10,34,4,61,16,71,5,45
+"Naman Ojha",7,SRH,"Naman Ojha",2,5,11,47,14,21,,
+"Vijay Shankar",7,SRH,"Vijay Shankar",,,1,-4,,,,
+"Karn Sharma",7,SRH,"Karn Sharma",13,45,14,53,14,43,,
+"Barinder Sran",7,SRH,,,,,,,,,
+"Tirumalasetti Suman",7,SRH,,,,,,,,,
+"Aditya Tare",7,SRH,"Aditya Tare",5,48,15,15,2,10,,
+"David Warner",7,SRH,"David Warner",16,45,14,75,14,85,4,16
+"Kane Williamson",7,SRH,"Kane Williamson",,,,,2,36,5,48
+"Yuvraj Singh",7,SRH,"Yuvraj Singh",13,52,14,67,13,34,4,31
