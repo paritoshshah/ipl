@@ -3,7 +3,7 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Mayank Agarwal",0,DD,"Mayank Agarwal",5,20,8,23,10,39,,
 "Khaleel Ahmed",0,DD,,,,,,,,,
 "Sam Billings",0,DD,,,,,,,,,
-"Carlos Brathwaite",0,DD,"Carlos Brathwaite",,,,,,,5,23
+"Carlos Brathwaite",0,DD,"Carlos Brathwaite",,,,,,,6,52
 "Nathan Coulter-Nile",0,DD,"Nathan Coulter-Nile",1,61,2,42,11,70,4,21
 "Quinton de Kock",0,DD,"Quinton de Kock","",0,7,34,2,47,4,77
 "Akhil Herwadkar",0,DD,,,,,,,,,
@@ -26,7 +26,7 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Jayant Yadav",0,DD,"Jayant Yadav",16,40,0,,2,63,,
 "Suresh Raina",1,GL,"Suresh Raina",17,62,16,76,17,51,5,42
 "Akshdeep Nath",1,GL,,,,,,,,,
-"Dwayne Bravo",1,GL,"Dwayne Bravo",18,68,1,15,17,81,5,74
+"Dwayne Bravo",1,GL,"Dwayne Bravo",18,68,1,15,17,81,6,89
 "Aaron Finch",1,GL,"Aaron Finch",14,58,13,43,3,4,2,41
 "Ishan Kishan",1,GL,,,,,,,,,
 "Ravindra Jadeja",1,GL,"Ravindra Jadeja",18,51,16,68,17,51,5,43
@@ -80,7 +80,7 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Manish Pandey",3,KKR,"Manish Pandey",7,31,16,46,13,32,1,0
 "Yusuf Pathan",3,KKR,"Yusuf Pathan",16,40,15,40,13,49,,
 "Ankit Rajpoot",3,KKR,,,,,,,,,
-"Andre Russell",3,KKR,"Andre Russell",3,6,2,7,13,101,5,101
+"Andre Russell",3,KKR,"Andre Russell",3,6,2,7,13,101,6,94
 "Rajagopal Sathish",3,KKR,,,,,,,,,
 "Shakib Al Hasan",3,KKR,"Shakib Al Hasan",,,13,81,4,51,4,81
 "Jaidev Unadkat",3,KKR,"Jaidev Unadkat",13,45,9,37,1,4,,
@@ -90,7 +90,7 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Rohit Sharma",4,MI,"Rohit Sharma",19,51,15,51,16,58,5,29
 "Corey Anderson",4,MI,"Corey Anderson",,,12,55,4,58,5,48
 "Jasprit Bumrah",4,MI,"Jasprit Bumrah",2,45,11,35,4,10,5,32
-"Jos Buttler",4,MI,"Jos Buttler",,,,,,,5,67
+"Jos Buttler",4,MI,"Jos Buttler",,,,,,,6,65
 "Unmukt Chand",4,MI,"Unmukt Chand",9,25,1,-5,6,32,,
 "Marchant de Lange",4,MI,"Marchant de Lange",,,1,70,1,52,,
 "Shreyas Gopal",4,MI,"Shreyas Gopal",,,4,61,1,20,,
@@ -107,7 +107,7 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Nitish Rana",4,MI,"Nitish Rana",,,,,0,,,
 "Jitesh Sharma",4,MI,,,,,,,,,
 "Ambati Rayudu",4,MI,"Ambati Rayudu",17,23,15,45,15,42,,
-"Lendl Simmons",4,MI,"Lendl Simmons",,,8,91,13,75,1,179
+"Lendl Simmons",4,MI,"Lendl Simmons",,,8,91,13,75,2,102
 "Tim Southee",4,MI,"Tim Southee",,,3,31,6,42,,
 "Jagadeesha Suchith",4,MI,,,,,,,,,
 "Vinay Kumar",4,MI,"Vinay Kumar",16,57,9,33,13,34,,
@@ -141,12 +141,12 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Varun Aaron",6,RCB,"Varun Aaron",,,10,64,5,35,,
 "Abu Nechim",6,RCB,"Abu Nechim",,,4,34,3,21,,
 "Sreenath Arvind",6,RCB,"Sreenath Arvind",,,,,5,69,,
-"Samuel Badree",6,RCB,"Samuel Badree",1,11,4,38,0,,5,69
+"Samuel Badree",6,RCB,"Samuel Badree",1,11,4,38,0,,6,82
 "Stuart Binny",6,RCB,"Stuart Binny",17,47,13,25,12,29,,
 "Yuzvendra Chahal",6,RCB,"Yuzvendra Chahal",1,12,14,51,13,57,,
 "AB de Villiers",6,RCB,"AB de Villiers",14,49,14,59,14,72,4,54
 "Praveen Dubey",6,RCB,,,,,,,,,
-"Chris Gayle",6,RCB,"Chris Gayle",16,93,9,33,12,77,4,88
+"Chris Gayle",6,RCB,"Chris Gayle",16,93,9,33,12,77,5,77
 "Travis Head",6,RCB,"Travis Head",,,,,0,,,
 "Iqbal Abdulla",6,RCB,"Iqbal Abdulla",5,52,1,19,5,48,,
 "Kedar Jadhav",6,RCB,"Kedar Jadhav",10,24,10,28,13,32,,
@@ -175,7 +175,7 @@ firstname,team_id,team,firstname,num_games_2013,avg_points_2013,num_games_2014,a
 "Siddarth Kaul",7,SRH,"Siddarth Kaul",6,38,5,12,0,,,
 "Bhuvneshwar Kumar",7,SRH,"Bhuvneshwar Kumar",16,53,14,73,14,61,,
 "Abhimanyu Mithun",7,SRH,"Abhimanyu Mithun",1,29,,,0,,,
-"Eoin Morgan",7,SRH,"Eoin Morgan",13,39,,,9,42,5,33
+"Eoin Morgan",7,SRH,"Eoin Morgan",13,39,,,9,42,6,28
 "Mustafizur Rahman",7,SRH,"Mustafizur Rahman",,,,,,,3,116
 "Ashish Nehra",7,SRH,"Ashish Nehra",10,34,4,61,16,71,5,45
 "Naman Ojha",7,SRH,"Naman Ojha",2,5,11,47,14,21,,
