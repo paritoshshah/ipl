@@ -12,16 +12,15 @@ function fetch(url, callback) {
 }
 
 var fs = require('fs');
-function scrape_batting_odds() {
-	url = 'http://www.oddschecker.com/cricket/indian-premier-league/top-tournament-batsman';
+function scrape_odds(url, outputFile) {
 	fetch(url, function(page) {
-		batting_odds = page.evaluate(function() {
+		odds = page.evaluate(function() {
 			return $.map($('#t1 > tr'), function(player) { return $(player).attr("data-bname") + "," + (1/$(player).attr("data-best-dig")).toFixed(3); });
 		});
 
-		console.log('generating batting_odds.csv');
+		console.log('generating ' + outputFile);
 		try {
-			fs.write('batting_odds.csv', batting_odds.join('\n'), 'w');
+			fs.write(outputFile, odds.join('\n'), 'w');
 		}
 		catch(e) {
 			console.log(e);
@@ -73,4 +72,7 @@ urls = [
 	'http://www.oddschecker.com/cricket/indian-premier-league/royal-challengers-bangalore-v-hyderabad-sunrisers/man-of-the-match'
 ];
 
-scrape_mom_odds(urls);
+//url = 'http://www.oddschecker.com/cricket/indian-premier-league/top-tournament-batsman';
+//scrape_mom_odds(urls);
+url = 'http://www.oddschecker.com/cricket/indian-premier-league/top-tournament-bowler';
+scrape_odds(url, 'bowling_odds.csv');

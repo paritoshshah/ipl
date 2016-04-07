@@ -21,3 +21,4 @@ create table player_stats_16wc_cum as select l.*, m.num_games as num_games_2016w
 -- 2016 pre-ipl stats
 select l.*, r.* from squads_2016 l left join player_stats_16wc_cum r on l.firstname = r.firstname;
 select l.*, r.* from squads_2016 l left join batting_odds_2016 r on l.firstname = r.firstname;
+select l.firstname, odds from squads_2016 l left join bowling_odds_2016 r on l.firstname = r.firstname;
