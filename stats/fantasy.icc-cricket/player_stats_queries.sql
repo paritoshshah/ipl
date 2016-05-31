@@ -22,3 +22,6 @@ create table player_stats_16wc_cum as select l.*, m.num_games as num_games_2016w
 select l.*, r.* from squads_2016 l left join player_stats_16wc_cum r on l.firstname = r.firstname;
 select l.*, r.* from squads_2016 l left join batting_odds_2016 r on l.firstname = r.firstname;
 select l.firstname, odds from squads_2016 l left join bowling_odds_2016 r on l.firstname = r.firstname;
+
+-- 16_cum
+create table player_stats_16_cum as select l.*, m.num_games as num_games_2016, m.avg_points as avg_points_2016 from player_stats_16wc_cum l left outer join player_stats_2016 m on l.firstname = m.firstname union all select m.firstname, num_games_2013, avg_points_2013, num_games_2014, avg_points_2014, num_games_2015, avg_points_2015, num_games_2016wc, avg_points_2016wc, m.num_games as num_games_2016, m.avg_points as avg_points_2016 from player_stats_2016 m left join player_stats_16wc_cum l on m.firstname = l.firstname where l.firstname is null;
