@@ -3,3 +3,5 @@ canonical_names := "firstname" column from the IPL Fantasy stats sheet. Master l
 phantomjs scraper.js batsman
 phantomjs scraper.js bowler
 
+match_names.py := find names that need to be manually matched
+matched_names.csv := manual mapping from oc_names to canonical_names that don't perfectly match
