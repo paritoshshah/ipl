@@ -72,7 +72,8 @@ urls = [
 	'http://www.oddschecker.com/cricket/indian-premier-league/royal-challengers-bangalore-v-hyderabad-sunrisers/man-of-the-match'
 ];
 
-//url = 'http://www.oddschecker.com/cricket/indian-premier-league/top-tournament-batsman';
 //scrape_mom_odds(urls);
-url = 'http://www.oddschecker.com/cricket/indian-premier-league/top-tournament-bowler';
+url = 'https://www.oddschecker.com/cricket/ipl/indian-premier-league/top-tournament-batsman'
+scrape_odds(url, 'batting_odds.csv');
+url = 'https://www.oddschecker.com/cricket/ipl/indian-premier-league/top-tournament-bowler';
 scrape_odds(url, 'bowling_odds.csv');
