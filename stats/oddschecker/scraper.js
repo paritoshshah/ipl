@@ -1,3 +1,12 @@
+var system = require('system');
+var args = system.args;
+
+if (args.length < 2) {
+	console.log('Usage: phantomjs scraper.js [type]');
+	console.log('Where [type] is either batsman or bowler');
+	phantom.exit();
+}
+
 function fetch(url, callback) {
 	var page = require('webpage').create();
 	page.open(url, function(status) {
@@ -73,7 +82,5 @@ urls = [
 ];
 
 //scrape_mom_odds(urls);
-url = 'https://www.oddschecker.com/cricket/ipl/indian-premier-league/top-tournament-batsman'
-scrape_odds(url, 'batting_odds.csv');
-url = 'https://www.oddschecker.com/cricket/ipl/indian-premier-league/top-tournament-bowler';
-scrape_odds(url, 'bowling_odds.csv');
+url = 'https://www.oddschecker.com/cricket/ipl/indian-premier-league/top-tournament-' + args[1];
+scrape_odds(url, args[1] + '_odds_oc.csv');
